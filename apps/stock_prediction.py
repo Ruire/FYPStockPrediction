@@ -115,6 +115,8 @@ def app():
     global start_date_gbl
     global option_gbl
     st.title('View Stock Prediction')
+    with st.expander("Description"):
+        st.write("asdsafhasdjkflasd")
     col1, col2, = st.columns(2)
     with col1:
         user_input = st.text_input("ENTER STOCK SYMBOL")
@@ -156,7 +158,7 @@ def app():
             latest_predicted_price = var_predicted_stock_price._get_value(len(var_predicted_stock_price)-1,'Predicted Stock Price')
             latest_real_price = data_real_stock_price[len(data_real_stock_price)-8]
             price_percentage = latest_predicted_price-latest_real_price/100
-            st.title(f"Forecast for {user_input} ")
+            st.title(f"7 day forecast for {user_input} ")
             st.write(df.tail(7))
 
             if (price_percentage > 10):
