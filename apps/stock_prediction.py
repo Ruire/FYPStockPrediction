@@ -34,6 +34,7 @@ from sklearn.metrics import mean_squared_error
 from sklearn.metrics import mean_absolute_error
 from sklearn.model_selection import train_test_split
 from keras.callbacks import EarlyStopping
+
 with open('style.css') as f:
     st.markdown(f'<style>{f.read()}</style>',unsafe_allow_html=True)
 
@@ -116,7 +117,8 @@ def app():
     global option_gbl
     st.title('View Stock Prediction')
     with st.expander("Description"):
-        st.write("asdsafhasdjkflasd")
+        st.write("Enter a stock symbol of your choice in the text field below (ETF/Bonds/Commodities). Anything that is in Yahoo Finance will be shown here.")
+        st.write("Run the prediction by pressing the run prediction button. Select the data type to perform the prediction with (Open/High/Low/Close).")
     col1, col2, = st.columns(2)
     with col1:
         user_input = st.text_input("ENTER STOCK SYMBOL")
@@ -159,7 +161,7 @@ def app():
             latest_real_price = data_real_stock_price[len(data_real_stock_price)-8]
             price_percentage = latest_predicted_price-latest_real_price/100
             st.title(f"7 day forecast for {user_input} ")
-            st.write(df.tail(7))
+            st.write(df["Predicted Stock Price"].tail(7))
 
             if (price_percentage > 10):
                 coa = "Buy large amounts"
@@ -171,4 +173,8 @@ def app():
                 coa = "Sell small amounts"
             else:
                 coa = "Sell large amounts"
-            st.write("Recommended course of action: " + coa)
+            st.write(" Prediction's recommended course of action: " + coa)
+
+            recommendations = pd.DataFrame(yf.Ticker(user_input).recommendations)
+            st.header("Analyst Recommendations from Yahoo Finance")
+            st.write(recommendations.tail())
