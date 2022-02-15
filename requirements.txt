@@ -18,5 +18,5 @@ tensorflow-io-gcs-filesystem==0.23.1
 tensorboard==2.7.0
 tensorboard-data-server==0.6.1
 tensorboard-plugin-wit==1.8.0
-bs4==4.10.0
+bs4==0.0.1
 urllib3==1.26.8
