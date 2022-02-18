@@ -19,9 +19,9 @@ import cufflinks as cf
 import warnings
 warnings.filterwarnings('ignore')
 
-# from bs4 import BeautifulSoup #req.text
-# from urllib.request import urlopen, Request
-# from nltk.sentiment.vader import SentimentIntensityAnalyzer
+from bs4 import BeautifulSoup #req.text
+from urllib.request import urlopen, Request
+from nltk.sentiment.vader import SentimentIntensityAnalyzer
 #ML
 import keras
 from keras.models import Sequential
@@ -111,6 +111,7 @@ def prediction_test():
     var_predicted_stock_price = predicted_stock_price
     var_stock_dates = stock_dates
 
+
 def app():
     global user_input_gbl
     global start_date_gbl
@@ -132,9 +133,8 @@ def app():
         option = st.selectbox('Select OHLC',('Open','High','Low','Close'))
         option_gbl = option
             #select date range if you want, or you can just see current time stock
-    if st.button("run prediction"):
+    if st.button("Run Prediction"):
         prediction_test()
-
         data_predicted_stock_price = var_predicted_stock_price["Predicted Stock Price"].to_numpy()
         date_index = (list(var_real_stock_price.index))
         for i in range(0, len(data_predicted_stock_price) - len(date_index)):

@@ -19,7 +19,7 @@ def app():
     original_title = '<p style="font-family:Arial; font-size: 17px;"> Supervisor: Mr Tan KT'
     st.markdown(original_title, unsafe_allow_html=True)
 
-    original_title = '<p style="font-family:Arial; font-size: 17px;"> Supervisor: Mr Tian SH'
+    original_title = '<p style="font-family:Arial; font-size: 17px;"> Assessor: Mr Tian SH'
     st.markdown(original_title, unsafe_allow_html=True)
     st.text("")
 
@@ -38,7 +38,7 @@ def app():
         st.markdown(original_title, unsafe_allow_html=True)
         original_title = '<p style="font-family:Arial; font-size: 17px;"> Role: Project Manager'
         st.markdown(original_title, unsafe_allow_html=True)
-        original_title = '<p style="font-family:Arial; font-size: 17px;"> Responsibilities: Liase and schedule meetings with project supervisor, handle documentation and software development'
+        original_title = '<p style="font-family:Arial; font-size: 17px;"> Responsibilities: Testing, Documentation'
         st.markdown(original_title, unsafe_allow_html=True)
     with col2:
         st.image(wj_img,width = 100)
@@ -50,7 +50,7 @@ def app():
         st.markdown(original_title, unsafe_allow_html=True)
         original_title = '<p style="font-family:Arial; font-size: 17px;"> Role: Technical Team Lead'
         st.markdown(original_title, unsafe_allow_html=True)
-        original_title = '<p style="font-family:Arial; font-size: 17px;"> Responsibilities: Develop webservice, program Machine Learning Model, design and develop application'
+        original_title = '<p style="font-family:Arial; font-size: 17px;"> Responsibilities: Application Development , Documentation'
         st.markdown(original_title, unsafe_allow_html=True)
     with col1:
         st.image(zw_img,width = 100)
@@ -62,7 +62,7 @@ def app():
         st.markdown(original_title, unsafe_allow_html=True)
         original_title = '<p style="font-family:Arial; font-size: 17px;"> Role: Design Team Lead'
         st.markdown(original_title, unsafe_allow_html=True)
-        original_title = '<p style="font-family:Arial; font-size: 17px;"> Responsibilities: UI and UX Design, leading project documentation'
+        original_title = '<p style="font-family:Arial; font-size: 17px;"> Responsibilities: UI and UX Design, Documentation'
         st.markdown(original_title, unsafe_allow_html=True)
     with col2:
         st.image(ey_img,width = 100)
@@ -74,5 +74,5 @@ def app():
         st.markdown(original_title, unsafe_allow_html=True)
         original_title = '<p style="font-family:Arial; font-size: 17px;"> Role: Quality Assurance Team Lead'
         st.markdown(original_title, unsafe_allow_html=True)
-        original_title = '<p style="font-family:Arial; font-size: 17px;"> Responsibilities: design and develop application, handle documentation and software development'
+        original_title = '<p style="font-family:Arial; font-size: 17px;"> Responsibilities: Program Design, Documentation'
         st.markdown(original_title, unsafe_allow_html=True)
