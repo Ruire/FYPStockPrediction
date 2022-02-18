@@ -132,7 +132,7 @@ def app():
         option = st.selectbox('Select OHLC',('Open','High','Low','Close'))
         option_gbl = option
             #select date range if you want, or you can just see current time stock
-    m = st.markdown(""" <style> div.stButton > button:first-child { background-color: rgb(204, 49, 49); margin-left: 260px; color: white;} </style>""", unsafe_allow_html=True)
+    m = st.markdown(""" <style> div.stButton > button:first-child { background-color: rgb(204, 49, 49); margin-left: 300px; color: white;} </style>""", unsafe_allow_html=True)
     if st.button("Run Prediction"):
         prediction_test()
         data_predicted_stock_price = var_predicted_stock_price["Predicted Stock Price"].to_numpy()
