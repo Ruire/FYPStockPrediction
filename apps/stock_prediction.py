@@ -40,7 +40,7 @@ from keras.callbacks import EarlyStopping
 def prediction_test():
 
     # df = yf.download(user_input_gbl, start = start_date_gbl, end = datetime.date.today(), progress = False ) date(2021,12,24)
-    df = yf.download(user_input_gbl, start = date(2021,1,24), end = date.today(), progress = False )
+    df = yf.download(user_input_gbl, start = date(2014,1,1), end = date.today(), progress = False )
     chart_data = pd.DataFrame(
          df[option_gbl])
 
@@ -118,7 +118,7 @@ def app():
     st.title('View Stock Prediction')
     with st.expander("Description"):
         st.write("Enter a stock symbol of your choice in the text field below (ETF/Bonds/Commodities). Anything that is in Yahoo Finance will be shown here.")
-        st.write("Run the prediction by pressing the run prediction button. Select the data type to perform the prediction with (Open/High/Low/Close).")
+        st.write("Run the prediction by pressing the run prediction button. Select the data type to perform the prediction with (Open/High/Low/Close). The prediction given will be a 7 day forecast of stock.")
     col1, col2, = st.columns(2)
     with col1:
         user_input = st.text_input("ENTER STOCK SYMBOL")

@@ -48,123 +48,131 @@ def page_settings():
     df = pd.DataFrame(information)
     col1,col2,col3 = st.columns(3)
     overview = {}
-    for i in df:
-        overview[i] = df[i].loc[0]
-    del overview['longBusinessSummary']
-    for key, value in overview.items():
-        with col1:
-            if 'longName' == key:
-                st.write(key + ":  " + value)
-            if 'shortName' == key:
-                st.write(key + ":  " + str(value))
-            if 'country' == key:
-                st.write(key + ":  " + value)
-            if 'sector' == key:
-                st.write(key + ":  " + value)
-            if 'industry' == key:
-                st.write(key + ":  " + value)
-            if 'financialCurrency' == key:
-                st.write(key + ":  " + str(value))
-            if 'exchange' == key:
-                st.write(key + ":  " + str(value))
-            if 'quoteType' == key:
-                st.write(key + ":  " + str(value))
-            if 'market' == key:
-                st.write(key + ":  " + str(value))
-            if 'fullTimeEmployees' == key:
-                st.write(key + ":  " + str(value))
-            if 'website' == key:
-                st.write(key + ":  " + str(value))
-            if 'bid' == key:
-                st.write(key + ":  " + str(value))
-            if 'revenuePerShare' == key:
-                st.write(key + " ($): " + str(value))
-            if 'totalCashPerShare' == key:
-                st.write(key + " ($):  " + str(value))
-            if 'ebitda' == key:
-                st.write(key + " ($):  " + str(value))
-            if 'beta' == key:
-                st.write(key + ":  " + str(value))
-            if 'returnOnAssets' == key:
-                st.write(key + " (%):  " + str(value))
-        with col2:
-            if 'regularMarketVolume' == key:
-                st.write(key + ":  " + str(value))
-            if 'averageVolume10days' == key:
-                st.write(key + ":  " + str(value))
-            if 'averageDailyVolume10Day' == key:
-                st.write(key + ":  " + str(value))
-            if 'profitMargins' == key:
-                st.write(key + " (%):  " + str(value))
-            if 'ebitdaMargins' == key:
-                st.write(key + " (%):  " + str(value))
-            if 'grossMargins' == key:
-                st.write(key + " (%):  " + str(value))
-            if 'operatingMargins' == key:
-                st.write(key + " (%):  " + str(value))
-            if 'quickRatio' == key:
-                st.write(key + ":  " + str(value))
-            if 'payoutRatio' == key:
-                st.write(key + ":  " + str(value))
-            if 'revenueGrowth' == key:
-                st.write(key + " (%):  " + str(value))
-            if 'currentRatio' == key:
-                st.write(key + ":  " + str(value))
-            if 'bookValue' == key:
-                st.write(key + ":  " + str(value))
-            if 'priceToBook' == key:
-                st.write(key + ":  " + str(value))
-            if 'heldPercentInstitutions' == key:
-                st.write(key + " (%):  " + str(value))
-            if 'heldPercentInsiders' == key:
-                st.write(key + " (%):  " + str(value))
-            if 'sharesOutstanding' == key:
-                st.write(key + ":  " + str(value))
-            if 'floatShares' == key:
-                st.write(key + ":  " + str(value))
-        with col3:
+    try:
+        for i in df:
+            overview[i] = df[i].loc[0]
+        del overview['longBusinessSummary']
+        for key, value in overview.items():
+            with col1:
+                if 'longName' == key:
+                    st.write(key + ":  " + value)
+                if 'shortName' == key:
+                    st.write(key + ":  " + str(value))
+                if 'country' == key:
+                    st.write(key + ":  " + value)
+                if 'sector' == key:
+                    st.write(key + ":  " + value)
+                if 'industry' == key:
+                    st.write(key + ":  " + value)
+                if 'financialCurrency' == key:
+                    st.write(key + ":  " + str(value))
+                if 'exchange' == key:
+                    st.write(key + ":  " + str(value))
+                if 'quoteType' == key:
+                    st.write(key + ":  " + str(value))
+                if 'market' == key:
+                    st.write(key + ":  " + str(value))
+                if 'fullTimeEmployees' == key:
+                    st.write(key + ":  " + str(value))
+                if 'website' == key:
+                    st.write(key + ":  " + str(value))
+                if 'bid' == key:
+                    st.write(key + ":  " + str(value))
+                if 'revenuePerShare' == key:
+                    st.write(key + " ($): " + str(value))
+                if 'totalCashPerShare' == key:
+                    st.write(key + " ($):  " + str(value))
+                if 'ebitda' == key:
+                    st.write(key + " ($):  " + str(value))
+                if 'beta' == key:
+                    st.write(key + ":  " + str(value))
+                if 'returnOnAssets' == key:
+                    st.write(key + " (%):  " + str(value))
+            with col2:
+                if 'regularMarketVolume' == key:
+                    st.write(key + ":  " + str(value))
+                if 'averageVolume10days' == key:
+                    st.write(key + ":  " + str(value))
+                if 'averageDailyVolume10Day' == key:
+                    st.write(key + ":  " + str(value))
+                if 'profitMargins' == key:
+                    st.write(key + " (%):  " + str(value))
+                if 'ebitdaMargins' == key:
+                    st.write(key + " (%):  " + str(value))
+                if 'grossMargins' == key:
+                    st.write(key + " (%):  " + str(value))
+                if 'operatingMargins' == key:
+                    st.write(key + " (%):  " + str(value))
+                if 'quickRatio' == key:
+                    st.write(key + ":  " + str(value))
+                if 'payoutRatio' == key:
+                    st.write(key + ":  " + str(value))
+                if 'revenueGrowth' == key:
+                    st.write(key + " (%):  " + str(value))
+                if 'currentRatio' == key:
+                    st.write(key + ":  " + str(value))
+                if 'bookValue' == key:
+                    st.write(key + ":  " + str(value))
+                if 'priceToBook' == key:
+                    st.write(key + ":  " + str(value))
+                if 'heldPercentInstitutions' == key:
+                    st.write(key + " (%):  " + str(value))
+                if 'heldPercentInsiders' == key:
+                    st.write(key + " (%):  " + str(value))
+                if 'sharesOutstanding' == key:
+                    st.write(key + ":  " + str(value))
+                if 'floatShares' == key:
+                    st.write(key + ":  " + str(value))
+            with col3:
 
-            if 'grossProfits' == key:
-                st.write(key + " ($):  " + str(value))
-            if 'totalCash' == key:
-                st.write(key + " ($):  " + str(value))
-            if 'totalDebt' == key:
-                st.write(key + " ($):  " + str(value))
-            if 'totalRevenue' == key:
-                st.write(key + " ($):  " + str(value))
-            if 'operatingCashflow' == key:
-                st.write(key + " ($):  " + str(value))
-            if 'freeCashflow' == key:
-                st.write(key + " ($):  " + str(value))
-            if 'enterpriseValue' == key:
-                st.write(key + " ($):  " + str(value))
-            if 'mostRecentQuarter' == key:
-                st.write(key + " ($):  " + str(value))
-            if 'marketCap' == key:
-                st.write(key + ":  " + str(value))
-            if 'lastFiscalYearEnd' == key:
-                st.write(key + " ($):  " + str(value))
-            if '52WeekChange' == key:
-                st.write(key + " (%):  " + str(value))
-            if 'fiftyTwoWeekHigh' == key:
-                st.write(key + " ($):  " + str(value))
-            if 'fiftyTwoWeekLow' == key:
-                st.write(key + " ($):  " + str(value))
-            if 'fiftyDayAverage' == key:
-                st.write(key + " ($):  " + str(value))
-            if 'debtToEquity' == key:
-                st.write(key + ":  " + str(value))
-            if 'returnOnEquity' == key:
-                st.write(key + " (%):  " + str(value))
-            if 'lastDividendValue' == key:
-                st.write(key + ":  " + str(value))
+                if 'grossProfits' == key:
+                    st.write(key + " ($):  " + str(value))
+                if 'totalCash' == key:
+                    st.write(key + " ($):  " + str(value))
+                if 'totalDebt' == key:
+                    st.write(key + " ($):  " + str(value))
+                if 'totalRevenue' == key:
+                    st.write(key + " ($):  " + str(value))
+                if 'operatingCashflow' == key:
+                    st.write(key + " ($):  " + str(value))
+                if 'freeCashflow' == key:
+                    st.write(key + " ($):  " + str(value))
+                if 'enterpriseValue' == key:
+                    st.write(key + " ($):  " + str(value))
+                if 'mostRecentQuarter' == key:
+                    st.write(key + " ($):  " + str(value))
+                if 'marketCap' == key:
+                    st.write(key + ":  " + str(value))
+                if 'lastFiscalYearEnd' == key:
+                    st.write(key + " ($):  " + str(value))
+                if '52WeekChange' == key:
+                    st.write(key + " (%):  " + str(value))
+                if 'fiftyTwoWeekHigh' == key:
+                    st.write(key + " ($):  " + str(value))
+                if 'fiftyTwoWeekLow' == key:
+                    st.write(key + " ($):  " + str(value))
+                if 'fiftyDayAverage' == key:
+                    st.write(key + " ($):  " + str(value))
+                if 'debtToEquity' == key:
+                    st.write(key + ":  " + str(value))
+                if 'returnOnEquity' == key:
+                    st.write(key + " (%):  " + str(value))
+                if 'lastDividendValue' == key:
+                    st.write(key + ":  " + str(value))
 
-        #news scraper
-    st.title("Latest News column")
-    url = ("http://finviz.com/quote.ashx?t=" + user_input.lower())
-    req = Request(url, headers={'User-Agent': 'Mozilla/5.0'})
-    webpage = urlopen(req).read()
-    html = soup(webpage, "html.parser")
+            #news scraper
+        st.title("Latest News column")
+        url = ("http://finviz.com/quote.ashx?t=" + user_input.lower())
+        req = Request(url, headers={'User-Agent': 'Mozilla/5.0'})
+        webpage = urlopen(req).read()
+        html = soup(webpage, "html.parser")
+    except KeyError:
+        st.error('Please enter valid input')
+    except NameError:
+        pass
+    except HTTPError:
+        pass
+
 
     def get_news():
         try:   # Find news table
