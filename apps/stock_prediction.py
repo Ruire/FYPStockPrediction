@@ -21,7 +21,7 @@ warnings.filterwarnings('ignore')
 
 from bs4 import BeautifulSoup #req.text
 from urllib.request import urlopen, Request
-from nltk.sentiment.vader import SentimentIntensityAnalyzer
+
 #ML
 import keras
 from keras.models import Sequential
