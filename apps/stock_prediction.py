@@ -35,8 +35,7 @@ from sklearn.metrics import mean_absolute_error
 from sklearn.model_selection import train_test_split
 from keras.callbacks import EarlyStopping
 
-with open('style.css') as f:
-    st.markdown(f'<style>{f.read()}</style>',unsafe_allow_html=True)
+
 
 def prediction_test():
 
@@ -133,6 +132,7 @@ def app():
         option = st.selectbox('Select OHLC',('Open','High','Low','Close'))
         option_gbl = option
             #select date range if you want, or you can just see current time stock
+    m = st.markdown(""" <style> div.stButton > button:first-child { background-color: rgb(204, 49, 49); margin-left: 250px;} </style>""", unsafe_allow_html=True)
     if st.button("Run Prediction"):
         prediction_test()
         data_predicted_stock_price = var_predicted_stock_price["Predicted Stock Price"].to_numpy()
