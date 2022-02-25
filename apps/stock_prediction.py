@@ -40,7 +40,7 @@ from keras.callbacks import EarlyStopping
 def prediction_test():
 
     # df = yf.download(user_input_gbl, start = start_date_gbl, end = datetime.date.today(), progress = False ) date(2021,12,24)
-    df = yf.download(user_input_gbl, start = date(2014,1,1), end = date.today(), progress = False )
+    df = yf.download(user_input_gbl, start = date(2018,1,1), end = date(2022,1,28), progress = False )
     chart_data = pd.DataFrame(
          df[option_gbl])
 
@@ -78,7 +78,7 @@ def prediction_test():
     model.compile(optimizer = "adam", loss = "mean_squared_error")
 
     # Fitting the RNN to the Training set
-    model.fit(X_train, y_train, epochs = 1, batch_size = 32)
+    model.fit(X_train, y_train, epochs = 2, batch_size = 15)
 
     price_data = df[option_gbl]
     price_data.fillna(value=0, inplace=True)
@@ -164,16 +164,16 @@ def app():
             st.write(df["Predicted Stock Price"].tail(7))
 
             if (price_percentage > 10):
-                coa = "Buy large amounts"
+                coa = "Sell large amounts"
             elif(price_percentage < 10 and price_percentage > 5):
-                coa = "Buy small amounts"
+                coa = "Sell small amounts"
             elif(price_percentage < 5 and price_percentage > -5):
                 coa = "Hold"
             elif(price_percentage < -5 and price_percentage > -10):
-                coa = "Sell small amounts"
+                coa = "Buy small amounts"
             else:
-                coa = "Sell large amounts"
-            st.write(" Prediction's recommended course of action: " + coa)
+                coa = "Buy large amounts"
+            st.title(" Prediction's recommended course of action: " + coa)
 
             recommendations = pd.DataFrame(yf.Ticker(user_input).recommendations)
             st.header("Analyst Recommendations from Yahoo Finance")

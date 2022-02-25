@@ -124,7 +124,6 @@ def page_settings():
                 if 'floatShares' == key:
                     st.write(key + ":  " + str(value))
             with col3:
-
                 if 'grossProfits' == key:
                     st.write(key + " ($):  " + str(value))
                 if 'totalCash' == key:
